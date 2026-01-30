@@ -66,3 +66,29 @@ function aplicarDesignProfissional() {
   sheet.hideColumns(1); // Produto ID
   sheet.hideColumns(2); // Depósito ID
   sheet.hideColumns(6); // Nome do depósito
+}
+
+/************** PROTEGER COLUNAS **************/
+function protegerColunasSistema() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  const protecao = sheet.protect().setDescription("Proteção sistema");
+  protecao.setUnprotectedRanges([
+    sheet.getRange("E:E") // Quantidade (usuário pode editar)
+  ]);
+
+  protecao.removeEditors(protecao.getEditors());
+}
+
+/******************** LIMPAR MENSAGENS ********************/
+function limparMensagens() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) return;
+
+  sheet.getRange(2, 7, lastRow).clearContent();
+  sheet.getRange(2, 8, lastRow).clearContent();
+  sheet.getRange(2, 9, lastRow).clearContent();
+
+  SpreadsheetApp.getUi().alert("Status e mensagens limpos 🧹");
+}
