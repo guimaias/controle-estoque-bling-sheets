@@ -1,6 +1,6 @@
 # Integração Bling + Google Sheets
 
-Projeto em Google Apps Script com Python e API para controle e sincronização de estoque com o Bling ERP.
+Projeto em Google Apps Script com JavaScript e API para controle e sincronização de estoque com o Bling ERP.
 
 ## Funcionalidades
 
@@ -32,7 +32,7 @@ Após a atualização do estoque, o dashboard é exportado automaticamente em PD
 ## Tecnologias
 
 - Google Apps Script
-- Python
+- JavaScript
 - Google Sheets
 - Bling API v3
 - Google Drive API
